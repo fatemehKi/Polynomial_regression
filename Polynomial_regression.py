@@ -43,4 +43,30 @@ X_poly = poly_reg.fit_transform(X)
 Lin_reg_2 = LinearRegression()
 Lin_reg_2.fit(X_poly, y)
 
+#Visualizing the Linear Regression Result for comparison with poly
+plt.scatter(X, y, color = 'red')
+plt.plot(X, Lin_reg.predict(X), color = 'blue')
+plt.title('Truth or Bluff (Linear Regression)')
+plt.xlabel('level')
+plt.ylabel('Salary')
+plt.show() 
 
+#Visualizing the Polynomial Regression Result for comparison with poly
+# the prediction is done on X_poly
+#addin the resolution to plot
+#X_grid = np.arange(min(X), max(X), 0.1)
+#X_grid = X_grid.reshape((len(X_grid),1))
+plt.scatter(X, y, color = 'red')
+# the prediction is done on X_poly
+plt.plot(X, Lin_reg_2.predict(X_poly), color = 'blue')
+plt.title('Truth or Bluff (Linear Regression)')
+plt.xlabel('level')
+plt.ylabel('Salary')
+plt.show() 
+
+# predicting a new result with the linear regression
+Lin_reg.predict([[6.5]])
+
+
+# predicting a new result with the polynomial regression
+Lin_reg_2.predict(poly_reg.fit_transform([[6.5]]))
