@@ -22,10 +22,25 @@ y = dataset.iloc[:, 2].values
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)"""
 
 # Feature Scaling
-# no need scaling for polynomial regression.. regressor does it
 """from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
 X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.transform(X_test)
 sc_y = StandardScaler()
 y_train = sc_y.fit_transform(y_train)"""
+
+#simple linear regression to compare with
+from sklearn.linear_model import LinearRegression
+Lin_reg = LinearRegression()
+Lin_reg.fit(X,y)
+
+#polynomial regression
+#first creating a polynomial x
+from sklearn.preprocessing import PolynomialFeatures
+poly_reg = PolynomialFeatures(degree = 4)
+X_poly = poly_reg.fit_transform(X)
+#second is doing regression
+Lin_reg_2 = LinearRegression()
+Lin_reg_2.fit(X_poly, y)
+
+
