@@ -3,7 +3,7 @@
 # Importing the dataset
 dataset = read.csv('Position_Salaries.csv')
 #only column 2 and 3 is required
-dataset = dataset[2:3]
+dataset = dataset[2:3]  
 
 # Splitting the dataset into the Training set and Test set
 # install.packages('caTools')
