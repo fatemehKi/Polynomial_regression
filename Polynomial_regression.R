@@ -23,6 +23,6 @@ Lin_reg = lm(formula = Salary ~ Level,
 
 #fitting polynomial regression to the dataset
 dataset$Level2 = dataset$Level^2
-dataset$Level2 = dataset$Level^3
+dataset$Level3 = dataset$Level^3
 poly_reg = lm(formula = Salary ~ ., 
               data = dataset)
