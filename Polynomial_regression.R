@@ -54,4 +54,15 @@ ggplot() +
   xlab('Level') +
   ylab('Salary')
 
+# Predicting a new result with Linear Regression
+#because we don't have 6.5 in the list, we need to use dataframe
+y_pred = predict(Lin_reg, data.frame(Level =6.5))
+
+# Prediction a new result witto dataserh polynmial
+# we also need to add the level1, 2 and 3 
+y_pred = predict(poly_reg, data.frame(Level =6.5,
+                                      Level2 = 6.5^2,
+                                      Level3 = 6.5^3,
+                                      Level4 = 6.5^4))
+
   
